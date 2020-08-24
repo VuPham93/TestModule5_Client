@@ -50,6 +50,10 @@ export class BookListComponent implements OnInit {
         foundBooks.push(this.bookList[i])
       }
     }
-    this.bookList = foundBooks
+
+    if (this.search != '') {
+      this.bookList = foundBooks
+    } else
+      this.getBookList()
   }
 }
