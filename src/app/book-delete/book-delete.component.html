@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Delete book</h1>
+  <table class="table table-light table-striped table-bordered table-hover">
+    <tr>
+      <th scope="row">Title:</th>
+      <td>{{book.title}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Author:</th>
+      <td>{{book.author}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Description:</th>
+      <td>{{book.description}}</td>
+    </tr>
+  </table>
+  <div class="row">
+    <div class="col col-6">
+      <button class="btn btn-block btn-danger" (click)="delete()">Delete book</button>
+    </div>
+    <div class="col col-6">
+      <button class="btn btn-block btn-success" routerLink="/">Back</button>
+    </div>
+  </div>
+</div>

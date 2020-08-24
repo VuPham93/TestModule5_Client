@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Book List</h1>
+  <div class="row mb-3">
+    <div class="col col-8 position-relative">
+      <p class="position-absolute" style="top: 18px">There are <span>{{booksNumber}}</span> books</p>
+    </div>
+    <div class="col col-4 d-flex justify-content-end">
+      <button class="btn btn-success" routerLink="/book-add">Add new book</button>
+    </div>
+  </div>
+  <table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col" class="text-center">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col" style="width: 60px" class="text-center">Edit</th>
+      <th scope="col" style="width: 60px" class="text-center">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of bookList; let i = index">
+      <td class="align-middle text-center" (click)="detail(book)">{{i+1}}</td>
+      <td class="align-middle" (click)="detail(book)">{{book.title}}</td>
+      <td class="align-middle" (click)="detail(book)">{{book.author}}</td>
+      <td><a class="btn btn-primary" (click)="edit(book)">Edit</a></td>
+      <td><a class="btn btn-danger" (click)="delete(book)">Delete</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
