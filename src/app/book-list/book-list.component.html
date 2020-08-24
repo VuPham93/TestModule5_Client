@@ -1,5 +1,10 @@
 <div class="container">
-  <h1>Book List</h1>
+  <div class="row">
+    <h1 class="col col-5">Book List</h1>
+    <div class="col col-7 d-flex justify-content-end" style="height: 20px">
+      <input class="form-control" type="text" [(ngModel)]="search" (ngModelChange)="findBook()">
+    </div>
+  </div>
   <div class="row mb-3">
     <div class="col col-8 position-relative">
       <p class="position-absolute" style="top: 18px">There are <span>{{booksNumber}}</span> books</p>

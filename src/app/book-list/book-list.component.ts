@@ -19,6 +19,8 @@ export class BookListComponent implements OnInit {
 
   booksNumber: number;
 
+  search: any;
+
   getBookList = () => {
     this.bookService.getBookList().subscribe(
       response => {this.bookList = response; this.booksNumber = this.bookList.length;},
@@ -39,5 +41,15 @@ export class BookListComponent implements OnInit {
   delete(book: any) {
     this.bookService.setBook(book);
     this.router.navigate(["/book-delete"]);
+  }
+
+  findBook() {
+    let foundBooks = [];
+    for (let i = 0; i < this.bookList.length; i++) {
+      if (this.bookList[i].title.toLowerCase().includes(this.search.toLowerCase())) {
+        foundBooks.push(this.bookList[i])
+      }
+    }
+    this.bookList = foundBooks
   }
 }
